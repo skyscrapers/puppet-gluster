@@ -24,9 +24,10 @@
 class gluster::service (
   $ensure = $::gluster::params::service_ensure,
   $enable = $::gluster::params::service_enable,
+  $service = $::gluster::params::service_name,
 ) {
 
-  service { 'glusterd':
+  service { $service :
     ensure     => $ensure,
     enable     => $enable,
     hasrestart => true,

@@ -52,6 +52,16 @@ class gluster::params {
     }
   }
 
+  case $::osfamily {
+    'RedHat': {
+      $service_name = 'glusterd'
+    }
+    'Debian', 'Ubuntu': {
+      $service_name = 'glusterfs-server'
+    }
+    default: { fail("${::osfamily} not yet supported!") }
+  }
+
   # parameters dealing with a Gluster server instance
   $service_enable = true
   $service_ensure = true
