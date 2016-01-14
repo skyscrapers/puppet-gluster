@@ -44,5 +44,7 @@ class gluster::repo::apt (
     class { '::apt': }
   }
 
-  ::apt::ppa { 'ppa:gluster/glusterfs-3.5': }
+  ::apt::ppa { 'ppa:gluster/glusterfs-3.5':
+    before => [Package[$gluster::install::_client_package], Package[$gluster::install::_server_package]],
+  }
 }

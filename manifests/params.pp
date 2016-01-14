@@ -39,6 +39,9 @@ class gluster::params {
   $server_package = 'glusterfs-server'
   $client_package = 'glusterfs-fuse'
 
+  # Name of the gluster server
+  $server_name = $::fqdn
+
   # and these packages are vendor-defined names
   if $::osfamily == 'RedHat' {
     $vendor_server_package = $::operatingsystemmajrelease ? {

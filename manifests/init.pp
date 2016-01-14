@@ -48,6 +48,7 @@ class gluster  (
   $repo                   = $::gluster::params::repo,
   $server                 = $::gluster::params::install_server,
   $server_package         = $::gluster::params::server_package,
+  $server_name            = $::gluster::params::server_name,
   $use_exported_resources = $::gluster::params::export_resources,
   $version                = $::gluster::params::version,
   $volumes                = undef,
